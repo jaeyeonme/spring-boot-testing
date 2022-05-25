@@ -15,7 +15,7 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    Employee saveEmployee(Employee employee) {
+    public Employee saveEmployee(Employee employee) {
 
         Optional<Employee> savedEmployee = employeeRepository.findByEmail(employee.getEmail());
         if (savedEmployee.isPresent()) {
@@ -25,15 +25,15 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    List<Employee> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
-    Optional<Employee> getEmployeeById(Long id) {
+    public Optional<Employee> getEmployeeById(Long id) {
         return employeeRepository.findById(id);
     }
 
-    Employee updateEmployee(Employee updatedEmployee) {
+    public Employee updateEmployee(Employee updatedEmployee) {
         return employeeRepository.save(updatedEmployee);
     }
 
